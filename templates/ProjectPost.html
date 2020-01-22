@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <body id="body35" >
+    {% for name in Projectname %}
+    <header>
+        <nav class="navbar navbar-expand-lg">
+        <div class="row">
+        <a href="/ManageYourself/mainpage" style="position: relative;float: left"><img src="/static/Artboard_4-256.png" style="width: 3rem;padding-left: 10px"></a><h2 class="navbar-brand"><b>ASTRONOTES</b></h2></div>
+            <b><span style="position:relative;padding-left: 400px;top: -5px">{{ name.ProjectName }} PROJECT </span><span style="position:relative;top:-5px;padding-left: 30px"></span></b>
+        <div class="navbar-collapse justify-content-end">
+            <ul class="nav" style="position: relative;top:-7px">
+                <li class="navbar-item"><a class="navbar-link" href="/ManageYourself/projectcreate"><b style="color: white">Create Project</b></a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/ManageYourself/project"><b>My Projects</b></a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/ManageYourself/addteammates"><b style="color: white">Add Team Mates</b></a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/accounts/logout"><b>Log Out</b></a></li>
+            </ul>
+        </div>
+    </nav>
+        {% endfor %}
+    </header>
+    <div class="row" style="position: relative;left: 60px">
+        <div id="ToDo_Card">
+        <div class="card border-danger mb-2" >
+            <div class="card-header" style="background-color: #d1000c"><b style="color: white"><a href="/ManageYourself/postcreate" style="color: white">TO DO</a></b> </div>
+                <div class="card-body text-danger" >
+                    {% for post in Posts %}
+                        {% if post.Status == "1" %}
+                            <div class="row">
+                                <div style="position: relative; left:10px;width: 200px">
+                                    <h5 class="card-title"><a class="card-link" href="/ManageYourself/{{ post.id }}/update">{{ post.Work }}</a></h5>
+                                </div>
+                                <div>
+                                    <div class="btn-group dropright">
+                                        <button type="button" style="float: left" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/update">Update</a>
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/delete">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><b>
+                            <p class="card-text" style="color: red">{{ post.Content }}<br><span class="card-text" style="color: red">👤 {{ post.Worker }}</span><br><span style="color: red">Published:<br>{{ post.PublishedDate_Post}}</span></p>
+                            <hr class="style11"></b>
+                        {% endif %}
+                    {% endfor %}
+
+            </div>
+        </div></div>
+    <div id="DOING_Card">
+    <div class="card border-warning mb-2" >
+            <div class="card-header bg-warning" ><b ><a href="/ManageYourself/postcreate" style="color: white">IN PROCESS</a></b> </div>
+                <div class="card-body text-danger" >
+                    {% for post in Posts %}
+                        {% if post.Status == "2" %}
+                            <div class="row">
+                                <div style="position: relative; left:10px;width: 200px">
+                                    <h5 class="card-title"><a class="card-link" href="/ManageYourself/{{ post.id }}/update">{{ post.Work }}</a></h5>
+                                </div>
+                                <div>
+                                    <div class="btn-group dropright">
+                                        <button type="button" style="float: left" class="btn btn-warning dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/update">Update</a>
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/delete">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><b>
+                            <p class="card-text text-warning" >{{ post.Content }}<br><span class="card-text text-warning" >👤 {{ post.Worker }} </span><br><span class="text-warning">Published:<br>{{ post.PublishedDate_Post}}</span></p>
+                            <hr class="style11"></b>
+                        {% endif %}
+                    {% endfor %}
+
+            </div>
+        </div></div>
+    <div  id="DONE_Card">
+    <div class="card border-success mb-2">
+            <div class="card-header bg-success " ><b><a href="/ManageYourself/postcreate" style="color: white">DONE</a></b> </div>
+                <div class="card-body text-danger" >
+                    {% for post in Posts %}
+                        {% if post.Status == "3" %}
+                            <div class="row">
+                                <div style="position: relative; left:10px;width: 200px">
+                                    <h5 class="card-title"><a class="card-link" href="/ManageYourself/{{ post.id }}/update">{{ post.Work }}</a></h5>
+                                </div>
+                                <div>
+                                    <div class="btn-group dropright">
+                                        <button type="button" style="float: left" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/update">Update</a>
+                                            <a class="dropdown-item" href="/ManageYourself/{{ post.id }}/delete">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><b>
+                            <p class="card-text text-success" >{{ post.Content }}<br><span class="card-text text-success" >👤 {{ post.Worker }}</span><br><span class="text-success">Published:<br>{{ post.PublishedDate_Post}}</span></p>
+                            <hr class="style11"></b>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div  id="users_card">
+    <div class="card border-dark mb-2">
+            <div class="card-header bg-dark " ><b><a style="color: white">Teammates</a></b> </div>
+                <div class="card-body text-danger" >
+                    {% for post in Users %}
+                            <b><p class="card-text text-dark" >👤 {{ post.Username}}</p>
+                            <hr class="style11"></b>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+{% endblock %}

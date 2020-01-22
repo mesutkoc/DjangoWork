@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <header>
+    {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-lg">
+            <div class="row"><a href="/ManageYourself/mainpage"><img src="/static/Artboard_4-256.png" style="width: 3rem;padding-left: 10px"></a><h2 class="navbar-brand"><b>ASTRONOTES</b></h2></div>
+            <b><span style="position:relative;padding-left: 400px;top: -5px">{{ user.username }}'s PROJECTs</span></b>
+            <div class="navbar-collapse justify-content-end">
+                <ul class="nav" style="position: relative;padding-right: 5px">
+                    <li class="navbar-item"><a class="navbar-link" href="/ManageYourself/projectcreate"><b style="color: white;position: relative;padding-right: 5px">Create Project</b></a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/ManageYourself/addteammates"><b style="color: white;position: relative;padding-right: -20px">Add Teammates</b></a></li>
+                    <li class="navbar-item dropdown-primary" style="position: relative;top: -8px">
+                        <a class="btn btn-light nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b style="color: black">Account</b></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink" >
+                          <a class="dropdown-item" href="/accounts/edituser">Update Username</a>
+                          <a class="dropdown-item" href="/accounts/editpassword">Update Password</a>
+                          <a class="dropdown-item" href="/accounts/logout">Log Out</a>
+                        </div>
+                    </li>
+                    <!--
+                    <li class="navbar-item"><a class="navbar-link" href="/accounts/logout"><b style="color: white">Log Out</b></a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/accounts/edituser"><b style="color: white">edit</b></a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/accounts/editpassword"><b style="color: white">editpassword</b></a></li>
+                     -->
+
+                </ul>
+            </div>
+        </nav>
+    {% endif %}
+    </header>
+    <body id="body3">
+    {% if user.is_authenticated %}
+        <title>{{ user.username }} Projects</title>
+    {% endif %}
+    <div class="card-columns" style="position: relative; top:40px;left: 50px">
+    {% for project in Projectss %}
+      <!--
+        <div class="card border-primary mb-3" id="projectcard" >
+            <a href="/ManageYourself/{{ project.id }}/projectposts" class="card">
+            <div class="card-body text-primary" >
+                <a style="color: black" class="card-title" href="/ManageYourself/{{ project.id }}/projectupdate">{{ project.ProjectName }}<br></a>
+                <span style="color: black">{{ project.PublishedDate }}</span>
+                <a class="btn btn-danger" href="/ManageYourself/{{ project.id }}/projectdelete"></a>
+            </div>
+
+            </a>
+        </div> -->
+        <div class="card bg-light mb-4" style="max-width: 18rem; height: auto">
+            <div class="card-header">
+                <div class="row">
+                    <div style="width: 200px">
+                        <a href="/ManageYourself/{{ project.id }}/projectposts" style="position: relative; left:10px;"><b>{{ project.ProjectName }}</b></a>
+                    </div>
+                    <div style="float: left">
+                        <div class="btn-group dropdown">
+                              <button type="button" style="float: right" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                              <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/ManageYourself/{{ project.id }}/projectupdate">Update Name</a>
+                                    <a class="dropdown-item" href="/ManageYourself/{{ project.id }}/projectdelete">Delete Project</a>
+                                    <a class="dropdown-item" href="/ManageYourself/{{ project.id }}/projectleave">Leave Project</a>
+                                    <a class="dropdown-item" href="/ManageYourself/{{ project.id }}/projectcompleted">Completed ✔</a>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" >
+                <h5 class="card-title" >Published Date: <br><p style="color: black">{{ project.PublishedDate }}</p></h5>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    </body>
+{% endblock %}

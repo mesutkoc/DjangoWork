@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <title>WELCOME</title>
+    <body id="body2">
+        <div class="container" id="reg-container">
+        <h1 id="h2">Sign up to Astronotes</h1>
+            <div class="content-section" id="reg-card">
+                <form class="form-group" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input id="submitbtn" class="btn btn-danger submitbtn" type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+{% endblock %}

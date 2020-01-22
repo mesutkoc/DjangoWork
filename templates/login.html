@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+    <body id="body1">
+    <title>WELCOME</title>
+    <div class="container">
+        <div class="row" style="position: relative;top: 50px;left: 360px; width:auto">
+            <a href="/ManageYourself/mainpage"><img src="/static/Artboard_4-256.png" style="width: 5rem"></a>
+            <a class="navbar-brand" href="/ManageYourself/mainpage"><b style="color: white;font-size: 50px">ASTRONOTES</b></a></div>
+        <div class="card" id="log-card">
+            <h1 id="h1">Welcome</h1>
+            <p id="p1">You can log in here!</p>
+            <div class="card-body" id="logcardbody">
+                <form method="post">
+                    <div class="input-group form-group">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                    </div>
+                    <div>
+                        <button id="loginbtn" class="btn btn-danger login_btn" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    <span>Don't have an account? </span><a href="/accounts/register">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,298 @@
+#body1{
+    background-image: url("picture.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.navbar-brand{
+    float: left;
+}
+
+header{
+    background-color: deepskyblue;
+    height: 50px;
+}
+
+.navbar-item{
+    padding-left: 0.5rem;
+}
+
+.navbar-brand{
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 0.75rem;
+
+}
+
+.navbar-link{
+    color: black;
+}
+
+
+.navbar-link:hover{
+    text-decoration: none;
+    color: brown;
+    transition: color 0.3s ease;
+}
+
+#log-card{
+    position: relative;
+    top: 80px;
+    left: 350px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 360px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#logcardbody{
+    position: relative;
+    left: 50px;
+
+}
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+.form-group,p,h1,span{
+    color: white;
+}
+#h1{
+    position: relative;
+    left: 90px;
+    top:20px;
+}
+#p1{
+    position: relative;
+    left: 100px;
+    top:20px;
+}
+#loginbtn{
+    position: relative;
+    left: 30px;
+    width: 150px;
+    background-color: #FFC312;
+}
+#body2{
+    background-image: url("picture1.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+#reg-card{
+    position: relative;
+    top:20px;
+    left: 10px;
+    height: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+}
+#reg-container{
+    position: relative;
+    top: 80px;
+    width:450px;
+    height: 500px;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+}
+
+#rename-card{
+    position: relative;
+    top:20px;
+    left: 10px;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+}
+#rename-container{
+    position: relative;
+    top: 80px;
+    width:450px;
+    height: 300px;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+}
+#UserHead{
+    position: relative;
+    left: 45px;
+    top: 20px;
+    color: white;
+}
+
+#h2{
+    position: relative;
+    left: 30px;
+    top:20px;
+    color: white;
+
+}
+.submitbtn:hover{
+color: black;
+background-color: yellow;
+}
+#submitbtn{
+    position: relative;
+    left: 80px;
+    width: 220px;
+    background-color: #FFC312;
+}
+#body3{
+    background-image: url("picture3.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+
+}
+#body35{
+    background-image: url("astroneer-04.jpeg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+
+}
+#body4{
+    background-image: url("dasbvz9-3a6f4661-9342-4449-853f-9b9bfc4bc226.png");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+}
+#body5{
+    background-image: url("astronautplaceholder.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+}
+#body6 {
+    background-image: url("jwgxfivmfs4y.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+#create-card{
+    position: relative;
+    top:20px;
+    left: 10px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+}
+#create-container{
+    position: relative;
+    top: 40px;
+    width:450px;
+    height: 600px;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+}
+#addUser-container{
+    position: relative;
+    top: 60px;
+    width:450px;
+    height: 350px;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+}
+
+#createProject-container{
+    position: relative;
+    top: 100px;
+    width:450px;
+    height: 250px;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+}
+#hAddTeam{
+    position: relative;
+    left: 70px;
+    top:20px;
+    color: white;
+
+}
+#h3{
+    position: relative;
+    left: 70px;
+    top:20px;
+    color: white;
+
+}
+.submitbutton:hover{
+    color: black;
+    background-color: #FFC312;
+
+}
+#submitbutton{
+    position: relative;
+    left: 80px;
+    width: 220px;
+}
+#ToDo_Card{
+    position: relative;
+    top:50px;
+    left: 0px;
+    width: 250px;
+}
+#DOING_Card{
+    position: relative;
+    top:50px;
+    left: 60px;
+    width: 250px;
+}
+#DONE_Card{
+    position: relative;
+    top:50px;
+    left: 130px;
+    width: 250px;
+}
+#users_card{
+    position: relative;
+    top:50px;
+    left: 200px;
+    width: 250px;
+}
+#hero{
+    background-color: #0079bf;
+    position: relative;
+    top: 50px;
+
+    height:100%;
+}
+#section1container{
+    position: relative;
+    top: 50px;
+    height:100%;
+}
+#hero2{
+    position: relative;
+    height:100%;
+
+
+}
+#section2container{
+    position: relative;
+    top: 100px;
+    height:100%;
+}
+.carousel{
+    position: relative;
+    left: 240px;
+    top:60px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 430px;
+}

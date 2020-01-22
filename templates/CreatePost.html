@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <body id="body4">
+        <div class="container" id="create-container">
+            <h1 id="h3"><b>Add New Task</b></h1>
+            <div class="content-section" id="create-card">
+                <form class="form-group" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input id="submitbutton" class="btn btn-primary submitbutton" type="submit" value="Add Task">
+                </form>
+            </div>
+        </div>
+    </body>
+{% endblock %}

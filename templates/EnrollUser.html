@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <body id="body6">
+        <div class="container" id="addUser-container">
+            <h1 id="hAddTeam"><b>Add Teammate</b></h1>
+            <div class="content-section" id="create-card">
+                <form class="form-group" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input id="submitbutton" class="btn btn-primary submitbutton" type="submit" value="Enroll">
+                </form>
+            </div>
+        </div>
+    </body>
+{% endblock %}
